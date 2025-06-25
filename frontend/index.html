@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Flash Cards App</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <h1>📚 Flash Cards App</h1>
+
+  <!-- 🔁 Tabs -->
+  <div class="tabs">
+    <button class="tab-btn active" data-tab="flashcards-tab">📑 Flashcards</button>
+    <button class="tab-btn" data-tab="add-tab">✍️ Add Flashcard</button>
+  </div>
+
+  <!-- 📦 Container for content -->
+  <div class="container">
+
+    <!-- 📑 Flashcards Tab Content -->
+    <div id="flashcards-tab" class="tab-content">
+      <label for="category">Choose Category:</label>
+      <select id="category">
+        <option value="">All</option>
+        <option value="DSA">DSA</option>
+        <option value="GRE">GRE</option>
+      </select>
+      <button id="load-btn">🔄 Load Cards</button>
+
+      <br>
+      <label>
+        <input type="checkbox" id="show-bookmarked" />
+        🔖 Show Only Bookmarked
+      </label>
+
+      <div class="flashcard" id="flashcard">
+        <div class="card-inner">
+          <div class="card-front" id="card-front">Click "Load Cards"</div>
+          <div class="card-back" id="card-back"></div>
+        </div>
+      </div>
+
+      <div class="controls">
+        <button id="prev-btn">⏮️ Previous</button>
+        <button id="next-btn">⏭️ Next</button>
+      </div>
+
+      <button id="bookmark-btn">⭐ Bookmark</button>
+    </div>
+
+    <!-- ✍️ Add Flashcard Tab Content -->
+    <div id="add-tab" class="tab-content hidden">
+      <h2>Add New Flashcard</h2>
+      <form id="flashcard-form">
+        <input type="text" id="new-question" placeholder="Question" required>
+        <textarea id="new-answer" placeholder="Answer" required></textarea>
+        <input type="text" id="new-category" placeholder="Category (e.g. DSA)" required>
+        <button type="submit">➕ Add Flashcard</button>
+      </form>
+    </div>
+  </div>
+
+  <script src="script.js"></script>
+</body>
+</html>
